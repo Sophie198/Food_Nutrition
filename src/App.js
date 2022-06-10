@@ -43,7 +43,7 @@ function App() {
       {alert !== " " && <Alert alert={alert} />}
       <form onSubmit={onSubmit} className="search-form">
         <input
-          class="form-control"
+          className="form-control"
           type="text"
           name="query"
           onChange={onChange}
@@ -51,7 +51,7 @@ function App() {
           autoComplete="off"
           placeholder="Search Food"
         />
-        <input type="submit" class="btn btn-primary" value="Search" />
+        <input type="submit" className="btn btn-primary" value="Search" />
       </form>
       <div className="foods">
         {foods !== [] &&

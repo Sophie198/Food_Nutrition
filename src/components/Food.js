@@ -6,14 +6,12 @@ const Food = ({ food }) => {
   const { label, image, foodID, nutrients } = food.food;
 
   return (
-    <div className="food" class="card border-info mb-3">
-      <div className="food_label" class="card-header">
-        {label}
-      </div>
-      <div class="card-body">
+    <div className="card border-info mb-3">
+      <div className="card-header">{label}</div>
+      <div className="card-body">
         <img src={image} alt={"________________________________"} />
         <br />
-        <button class="btn btn-info" onClick={() => setShow(!show)}>
+        <button className="btn btn-info" onClick={() => setShow(!show)}>
           Nutrients
         </button>
         {show && <FoodNutrients key={foodID} nutrients={nutrients} />}
