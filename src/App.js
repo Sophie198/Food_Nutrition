@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./bootstrap.min.css";
 import "./App.css";
-
 import Axios from "axios";
-import { v4 as uuidv4 } from "uuid";
 import Food from "./components/Food";
 import Alert from "./components/Alert";
 
@@ -23,7 +21,7 @@ function App() {
       if (result.data.hints.length === 0) {
         return setAlert("No food with such name");
       }
-      console.log(result.data.hints);
+      console.log(result.data);
       setFoods(result.data.hints);
       setQuery("");
       setAlert(" ");
@@ -57,7 +55,7 @@ function App() {
       </form>
       <div className="foods">
         {foods !== [] &&
-          foods.map((food) => <Food key={uuidv4()} food={food} />)}
+          foods.map((food) => <Food key={food.foodID} food={food} />)}
       </div>
     </div>
   );
